@@ -4,7 +4,7 @@ Version: 1.3.51
 Release: %mkrel 1
 URL: http://fedorahosted.org/%{name}
 License: GPLv2+
-Group: System Environment/Base
+Group: System/Configuration/Networking
 BuildRoot: %{_tmppath}/%{name}-%{version}-%{release}-root-%(%{__id_u} -n)
 BuildArch: noarch
 Source0: http://fedorahosted.org/released/%{name}/%{name}-%{version}.tar.bz2
@@ -13,7 +13,7 @@ BuildRequires: gettext
 BuildRequires: intltool
 BuildRequires: python
 Obsoletes: system-config-nfs < 1.3.42
-#Requires: system-config-nfs-docs
+Requires: system-config-nfs-docs
 Requires: pygtk2.0
 Requires: pygtk2.0-libglade
 Requires: python >= 2.0
