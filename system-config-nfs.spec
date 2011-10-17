@@ -1,13 +1,14 @@
 Summary: NFS server configuration tool
 Name: system-config-nfs
 Version: 1.3.51
-Release: %mkrel 1
+Release: %mkrel 2
 URL: http://fedorahosted.org/%{name}
 License: GPLv2+
 Group: System/Configuration/Networking
 BuildRoot: %{_tmppath}/%{name}-%{version}-%{release}-root-%(%{__id_u} -n)
 BuildArch: noarch
 Source0: http://fedorahosted.org/released/%{name}/%{name}-%{version}.tar.bz2
+Patch0:	s_c_nfs-1.3.51-service.patch
 BuildRequires: desktop-file-utils
 BuildRequires: gettext
 BuildRequires: intltool
@@ -27,6 +28,7 @@ modifying, and deleting nfs shares.
 
 %prep
 %setup -q
+%apply_patches
 
 %build
 make %{?with_console_util:CONSOLE_USE_CONFIG_UTIL=1} %{?_smp_mflags}
