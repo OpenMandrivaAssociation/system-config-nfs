@@ -8,6 +8,7 @@ Group: System/Configuration/Networking
 BuildRoot: %{_tmppath}/%{name}-%{version}-%{release}-root-%(%{__id_u} -n)
 BuildArch: noarch
 Source0: http://fedorahosted.org/released/%{name}/%{name}-%{version}.tar.bz2
+Patch0: service_name.patch
 BuildRequires: desktop-file-utils
 BuildRequires: gettext
 BuildRequires: intltool
@@ -27,6 +28,7 @@ modifying, and deleting nfs shares.
 
 %prep
 %setup -q
+%patch0 -p1
 
 %build
 make %{?with_console_util:CONSOLE_USE_CONFIG_UTIL=1} %{?_smp_mflags}
