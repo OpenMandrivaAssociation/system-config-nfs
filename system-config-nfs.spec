@@ -1,7 +1,7 @@
 Summary: NFS server configuration tool
 Name: system-config-nfs
 Version: 1.3.51
-Release: %mkrel 1
+Release: 2
 URL: http://fedorahosted.org/%{name}
 License: GPLv2+
 Group: System/Configuration/Networking
